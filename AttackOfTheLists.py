@@ -8,13 +8,17 @@ class AttackOfTheLists(object):
                b: List b
         Return: List a, List b with contents swapped
         """
+        #Check if 0 index position of list a is greater than 0 index position of list b
         if a[0] > b[0]:
             print("Alert: Detected Index Position 0 of list a greater than b")
+            #Swap each item in a,b
             for each in range(len(a)):
                 a[each], b[each] = b[each], a[each]
             print("Swapped List Structures: \nList A : {}\nList B : {}".format(a, b))
+            return a,b
         else:
             print(a, b)
+            return a,b
 
     def sortLists(self, a, b):
         """
@@ -22,9 +26,11 @@ class AttackOfTheLists(object):
                b: List b
         Return: List a, List b with contents sorted
         """
+        #Display elements of each list prior to sorting
         print("Pre-Sort List Structures: \nList A : {}\nList B : {}".format(a,b))
         a = self.quicksorter(a)
         b = self.quicksorter(b)
+        #Display elements of each list after sorting
         print("Post-Sort List Structures: \nList A : {}\nList B : {}".format(a,b))
         return a,b
 
@@ -67,6 +73,7 @@ class AttackOfTheLists(object):
         Return:
             combinedList: merged list via heapq merge
         """
+        #Merge lists via qheap merge
         combinedLists = list(merge(a,b))
         return combinedLists
 
@@ -78,12 +85,16 @@ class AttackOfTheLists(object):
         Return:
             iterList: merged, potentially sorted list
         """
+        #Pass a & b to an interable list
         iterList = [a,b]
+        #Set a counter for iterList positions
         indexCounter = 0
         for each in iterList:
             for element in each:
+                #check if the list is already in a sorted order/format
                 if all(each[element] <= each[element + 1] for element in range(len(each) - 1)):
                     pass
+                #if not sorted, specify item in iterList to be sorted by quickSorter, ID'd by 'indexCounter'
                 else:
                     print("Unsorted Array Detected, passing lists to sorting protocol")
                     iterList[indexCounter] = self.quicksorter(iterList[indexCounter])
