@@ -2,13 +2,16 @@
 Variety of list manipulation, sorting, merging techniques, just for fun
 
 #### Imports
+```Python3
 from heapq import merge
-
+```
 #### Class
+```Python3
 class AttackOfTheLists()
-
+```
 
 #### Swapping Contents
+```Python3
     def swapTwoLists(self, a, b):
         """
         Args:  a: List a
@@ -26,8 +29,9 @@ class AttackOfTheLists()
         else:
             print(a, b)
             return a,b
-            
+```            
 #### Checking Sorting
+```Python3
     def checkIfSorted(self, a,b):
         """
         Args:
@@ -52,8 +56,9 @@ class AttackOfTheLists()
                     break
             indexCounter+=1
         return iterList
-        
+```        
 #### Sorting (QuickSort)
+```Python3
 
     def sortLists(self, a, b):
         """
@@ -99,8 +104,9 @@ class AttackOfTheLists()
             high = self.quicksorter(highVal)
             quickSorter = (low + pivoter + high)
         return quickSorter
-
+```
 #### Merging Lists
+```Python3
     def mergeLists(self, a,b):
         """
         Args:
@@ -112,4 +118,4 @@ class AttackOfTheLists()
         #Merge lists via qheap merge
         combinedLists = list(merge(a,b))
         return combinedLists
-
+```
